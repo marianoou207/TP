@@ -1,0 +1,61 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><element><id>UMLClass</id><coordinates><x>336</x><y>0</y><w>88</w><h>56</h></coordinates><panel_attributes>«enum» 
+TipoPreparacion
+--
++ FRIA
++ CALIENTE</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>336</y><w>168</w><h>152</h></coordinates><panel_attributes>Entrada 
+implements 
+PrepararDecorar
+--
+- cantIngredientes: int
+--
++ Entrada(...)
++ preparar(): void
++ decorar(): void
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>696</x><y>24</y><w>168</w><h>48</h></coordinates><panel_attributes>«interface» PrepararDecorar
+--
++ preparar(): void
++ decorar(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>200</x><y>112</y><w>344</w><h>152</h></coordinates><panel_attributes>«abstract» 
+Plato
+--
+- nombre: String
+- precio: double
+- tipoPreparacion: TipoPreparacion
+--
++ Plato(nombre: String, precio: double, tipoPreparacion: TipoPreparacion)
++ getNombre(): String
++ getPrecio(): double
++ getTipoPreparacion(): TipoPreparacion
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>304</x><y>336</y><w>168</w><h>152</h></coordinates><panel_attributes>PlatoPrincipal 
+implements 
+PrepararDecorar
+--
+- tiempoCoccion: int
+--
++ PlatoPrincipal(...)
++ preparar(): void
++ decorar(): void
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>496</x><y>336</y><w>168</w><h>152</h></coordinates><panel_attributes>Postre 
+implements 
+PrepararDecorar
+--
+- conAzucar: boolean
+--
++ Postre(...)
++ preparar(): void
++ decorar(): void
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>232</x><y>568</y><w>304</w><h>152</h></coordinates><panel_attributes>Restaurante
+--
+- platos: List&lt;Plato&gt;
+--
++ agregarPlato(plato: Plato): void throws PlatoDuplicadoException
++ mostrarPlatos(): void
++ prepararPlato(nombre: String): void
++ decorarPlato(nombre: String): void
++ filtrarPorTipoPreparacion(tipo: TipoPreparacion): void
++ mostrarPlatosPorTipo(tipoPlato: String): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>776</y><w>208</w><h>152</h></coordinates><panel_attributes>«exception» 
+PlatoDuplicadoException
+--
++ PlatoDuplicadoException(mensaje: String)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>376</x><y>256</y><w>24</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>376</x><y>256</y><w>216</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;250;100</additional_attributes></element><element><id>Relation</id><coordinates><x>192</x><y>256</y><w>208</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>240;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>176</x><y>64</y><w>608</w><h>496</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>740;10;740;600;10;600;10;530</additional_attributes></element><element><id>Relation</id><coordinates><x>368</x><y>64</y><w>416</w><h>496</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>500;10;500;600;10;600;10;530</additional_attributes></element><element><id>Relation</id><coordinates><x>584</x><y>64</y><w>200</w><h>496</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>230;10;230;600;10;600;10;530</additional_attributes></element><element><id>Relation</id><coordinates><x>536</x><y>64</y><w>216</w><h>160</h></coordinates><panel_attributes>lt=-
+1 tipoPreparacion</panel_attributes><additional_attributes>10;180;150;180;200;10</additional_attributes></element><element><id>Relation</id><coordinates><x>48</x><y>208</y><w>200</w><h>464</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+1..* platos</panel_attributes><additional_attributes>190;10;10;10;10;560;230;560</additional_attributes></element><element><id>Relation</id><coordinates><x>368</x><y>712</y><w>48</w><h>80</h></coordinates><panel_attributes>lt=&lt;..
+lanza</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element></diagram>
